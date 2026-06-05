@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrEye.ai Pitch Deck</title>
+<style>
+:root{
+--bg:#f7f7f5;
+--text:#111;
+--muted:#666;
+--line:#d9d9d9;
+}
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+background:var(--bg);
+color:var(--text);
+line-height:1.5;
+}
+.slide{
+min-height:100vh;
+padding:8vw 10vw;
+display:flex;
+flex-direction:column;
+justify-content:center;
+border-bottom:1px solid var(--line);
+}
+.kicker{
+font-size:.8rem;
+letter-spacing:.2em;
+text-transform:uppercase;
+color:var(--muted);
+margin-bottom:1rem;
+}
+h1{
+font-size:clamp(3rem,8vw,7rem);
+font-weight:300;
+margin:.2em 0;
+}
+h2{
+font-size:clamp(2rem,5vw,4rem);
+font-weight:400;
+margin:0 0 1rem 0;
+}
+p{
+max-width:900px;
+font-size:1.2rem;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:2rem;
+margin-top:2rem;
+}
+.card{
+padding:1.5rem 0;
+border-top:2px solid var(--text);
+}
+.big-number{
+font-size:4rem;
+font-weight:300;
+}
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:2rem;
+}
+td,th{
+padding:1rem;
+border-bottom:1px solid var(--line);
+text-align:left;
+}
+th{ font-weight:600; }
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:flex-end;
+gap:2rem;
+}
+.footer{
+margin-top:3rem;
+color:var(--muted);
+}
+/* Accuracy bar */
+.acc-row{ display:flex; flex-direction:column; gap:.4rem; margin-bottom:1.4rem; }
+.acc-label{ display:flex; justify-content:space-between; font-size:1rem; }
+.acc-label strong{ font-weight:500; }
+.acc-label span{ color:var(--muted); font-size:.95rem; }
+.bar-track{
+height:4px; background:var(--line); border-radius:2px; width:100%;
+}
+.bar-fill{
+height:4px; background:var(--text); border-radius:2px;
+}
+/* Flow steps */
+.flow{
+display:flex;
+flex-wrap:wrap;
+gap:0;
+margin-top:2rem;
+align-items:center;
+}
+.flow-step{
+padding:1.2rem 0;
+border-top:2px solid var(--text);
+flex:1;
+min-width:130px;
+}
+.flow-step .step-num{
+font-size:.75rem;
+letter-spacing:.15em;
+text-transform:uppercase;
+color:var(--muted);
+margin-bottom:.3rem;
+}
+.flow-step .step-label{ font-size:1rem; font-weight:500; }
+.flow-arrow{
+padding:0 .6rem;
+color:var(--line);
+font-size:1.5rem;
+flex-shrink:0;
+}
+/* Team cards */
+.team-card{
+padding:1.5rem 0;
+border-top:2px solid var(--text);
+}
+.team-name{ font-size:1.25rem; font-weight:500; margin-bottom:.2rem; }
+.team-role{ color:var(--muted); font-size:1rem; margin-bottom:.5rem; }
+.team-bio{ font-size:.95rem; max-width:400px; }
+/* Diseases list */
+.disease-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:1.5rem;
+margin-top:2rem;
+}
+.disease-card{
+padding:1.2rem 0;
+border-top:2px solid var(--text);
+}
+.disease-name{ font-weight:500; margin-bottom:.3rem; }
+.disease-num{ font-size:2.5rem; font-weight:300; line-height:1; margin-bottom:.3rem; }
+.disease-note{ font-size:.85rem; color:var(--muted); }
+/* Highlight text */
+.hl{ font-weight:500; }
+/* Footnote */
+.footnote{ font-size:.85rem; color:var(--muted); margin-top:1.5rem; }
+</style>
+</head>
+<body>
+
+<!-- 1. COVER -->
+<section class="slide">
+<div class="kicker"><a href="https://treye-ai.vercel.app" target="_blank" style="color:inherit;text-decoration:none;border-bottom:1px solid var(--line);">TrEye.ai</a></div>
+<div class="hero">
+<div>
+<h1>Bringing Specialist Eye Care to Every Community.</h1>
+<p>AI-powered retinal screening designed for underserved communities across Sub-Saharan Africa.</p>
+</div>
+</div>
+</section>
+
+<!-- 2. VISION -->
+<section class="slide">
+<div class="kicker">Vision</div>
+<h2>Preventable Blindness Should Not Depend on Geography.</h2>
+<p>Millions of people lose vision not because treatment is unavailable, but because diagnosis arrives too late. TrEye.ai transforms everyday smartphones into accessible screening tools capable of extending specialist-level eye care beyond hospitals and into communities — so no one suffers preventable blindness due to a lack of access to diagnostic tools.</p>
+</section>
+
+<!-- 3. PROBLEM -->
+<section class="slide">
+<div class="kicker">Problem</div>
+<h2>The Silent Epidemic of Preventable Blindness.</h2>
+<p>Across Sub-Saharan Africa, the prevalence of vision impairment from glaucoma, cataracts, and diabetic retinopathy is alarmingly high — and rising. Retinal cameras are scarce, specialists are concentrated in urban centres, and 90% of vision impairment cases worldwide are avoidable. The 2023 Ghana Eye Health Summit confirmed a growing local burden. The gap is not in treatment; it is in timely diagnosis.</p>
+<div class="grid" style="margin-top:2rem;">
+<div class="card"><div class="big-number">600M+</div>People globally with moderate-to-severe preventable vision impairment.</div>
+<div class="card"><div class="big-number">90%</div>Of all vision loss cases worldwide are preventable or treatable with early detection.</div>
+<div class="card"><div class="big-number">1 in 4</div>People in Sub-Saharan Africa lack access to a qualified eye care professional.</div>
+</div>
+</section>
+
+<!-- 4. SOLUTION -->
+<section class="slide">
+<div class="kicker">Solution</div>
+<h2>A Software-First Mobile Eye Health Platform.</h2>
+<p>TrEye.ai is a Software as a Medical Device (SaMD) — an AI-driven mobile application that enables community health workers to conduct retinal screenings at scale using their existing smartphones. No specialist training required.</p>
+<div class="grid">
+<div class="card"><strong>AI-Powered Diagnostics</strong><br>Machine learning models detect five ocular diseases with accuracy comparable to clinical standards — including diseases endemic to Africa.</div>
+<div class="card"><strong>Guided Screening Workflows</strong><br>Step-by-step in-app guidance enables community health workers to capture and submit retinal images without clinical training.</div>
+<div class="card"><strong>Decision Support</strong><br>Instant risk stratification and referral recommendations. Appointments bookable directly in-app.</div>
+<div class="card"><strong>Mass Screening at Scale</strong><br>Automated software workflows allow a single health worker to screen entire communities, making population-level programmes economically viable.</div>
+</div>
+</section>
+
+<!-- 5. PLATFORM FLOW -->
+<section class="slide">
+<div class="kicker">Platform</div>
+<h2>From Screening to Referral.</h2>
+<p>A seamless pathway from community screening to specialist care — guided entirely by the TrEye.ai app.</p>
+<div class="flow">
+<div class="flow-step"><div class="step-num">01</div><div class="step-label">Community Health Worker</div></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step"><div class="step-num">02</div><div class="step-label">Smartphone Fundus Imaging</div></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step"><div class="step-num">03</div><div class="step-label">TrEye.ai AI Engine</div></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step"><div class="step-num">04</div><div class="step-label">Risk Assessment</div></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step"><div class="step-num">05</div><div class="step-label">Referral Pathway</div></div>
+<div class="flow-arrow">→</div>
+<div class="flow-step"><div class="step-num">06</div><div class="step-label">Specialist Care</div></div>
+</div>
+</section>
+
+<!-- 6. WHY NOW -->
+<section class="slide">
+<div class="kicker">Why Now</div>
+<h2>Three Forces Are Converging.</h2>
+<div class="grid">
+<div class="card"><strong>Smartphone Ubiquity</strong><br>Rapid smartphone adoption across Africa creates a ready distribution channel for mobile diagnostics at zero incremental hardware cost.</div>
+<div class="card"><strong>AI Maturity</strong><br>Breakthroughs in medical computer vision now make it possible to detect retinal diseases from smartphone images with clinical-grade accuracy.</div>
+<div class="card"><strong>Rising Disease Burden</strong><br>Growing prevalence of diabetes, hypertension, and age-related eye disease across Sub-Saharan Africa is creating an urgent unmet demand for screening.</div>
+</div>
+</section>
+
+<!-- 7. AI PERFORMANCE / TRACTION -->
+<section class="slide">
+<div class="kicker">Traction</div>
+<h2>Built on Research and Validated Results.</h2>
+<p>Prototype imaging systems developed and tested. Our AI models are validated against clinical datasets and exceed 90% accuracy across five conditions. Field trials are the next milestone.</p>
+
+<div class="disease-grid" style="margin-top:2.5rem;">
+  <div class="disease-card">
+    <div class="disease-name">Cataracts</div>
+    <div class="disease-num">94%</div>
+    <div class="bar-track"><div class="bar-fill" style="width:94%"></div></div>
+    <div class="disease-note">Validation dataset accuracy</div>
+  </div>
+  <div class="disease-card">
+    <div class="disease-name">Glaucoma</div>
+    <div class="disease-num">94%</div>
+    <div class="bar-track"><div class="bar-fill" style="width:94%"></div></div>
+    <div class="disease-note">Validation dataset accuracy</div>
+  </div>
+  <div class="disease-card">
+    <div class="disease-name">Diabetic Retinopathy</div>
+    <div class="disease-num">90%</div>
+    <div class="bar-track"><div class="bar-fill" style="width:90%"></div></div>
+    <div class="disease-note">Validation dataset accuracy</div>
+  </div>
+  <div class="disease-card">
+    <div class="disease-name">Hypertensive Retinopathy</div>
+    <div class="disease-num">86%</div>
+    <div class="bar-track"><div class="bar-fill" style="width:86%"></div></div>
+    <div class="disease-note">Validation dataset accuracy</div>
+  </div>
+  <div class="disease-card">
+    <div class="disease-name">Macular Degeneration</div>
+    <div class="disease-num">91%</div>
+    <div class="bar-track"><div class="bar-fill" style="width:91%"></div></div>
+    <div class="disease-note">Validation dataset accuracy</div>
+  </div>
+</div>
+<p class="footnote">Results from internal validation datasets. Prospective clinical validation in progress.</p>
+</section>
+
+<!-- 8. MARKET -->
+<section class="slide">
+<div class="kicker">Market</div>
+<h2>A Platform Opportunity.</h2>
+<p>The global ophthalmic equipment market is valued at <span class="hl">$67.74 billion</span> and growing. The overwhelming majority of incumbent solutions are designed for high-income settings — leaving the highest-burden markets almost entirely unaddressed.</p>
+<div class="grid" style="margin-top:2rem;">
+<div>
+<div class="big-number">TAM</div>
+<p>Global ophthalmic screening and diagnostics. <strong>$67.74B</strong> market, expanding with rising chronic disease prevalence worldwide.</p>
+</div>
+<div>
+<div class="big-number">SAM</div>
+<p>Healthcare providers, NGOs, telemedicine platforms, and public health programmes across emerging markets.</p>
+</div>
+<div>
+<div class="big-number">SOM</div>
+<p>Early deployment across Sub-Saharan Africa — ophthalmologists, optometrists, community health workers, and patients with chronic conditions.</p>
+</div>
+</div>
+</section>
+
+<!-- 9. COMPETITIVE ADVANTAGE -->
+<section class="slide">
+<div class="kicker">Competitive Advantage</div>
+<h2>Not Another AI Model.</h2>
+<p>Existing players — Peek Vision, Volk Optical, oDos Eye Care, and Remidio Solutions — address pieces of this problem. None combine smartphone-native delivery, community deployment, and AI models trained specifically for Africa's disease profile as a pure software product.</p>
+<table>
+<tr><th></th><th>Traditional Cameras</th><th>AI Vendors</th><th>Peek / Remidio</th><th>TrEye.ai</th></tr>
+<tr><td>Software as a Medical Device</td><td>✕</td><td>△</td><td>△</td><td>✓</td></tr>
+<tr><td>Smartphone-native</td><td>✕</td><td>△</td><td>△</td><td>✓</td></tr>
+<tr><td>Community deployment</td><td>✕</td><td>△</td><td>△</td><td>✓</td></tr>
+<tr><td>Designed for Africa</td><td>✕</td><td>✕</td><td>✕</td><td>✓</td></tr>
+<tr><td>NTD detection</td><td>✕</td><td>✕</td><td>✕</td><td>✓</td></tr>
+</table>
+</section>
+
+<!-- 10. BUSINESS MODEL -->
+<section class="slide">
+<div class="kicker">Business Model</div>
+<h2>Recurring Revenue, Scalable Impact.</h2>
+<div class="grid">
+<div class="card"><strong>Software Subscriptions</strong><br>Per-site or per-user SaaS fees for access to the diagnostic platform, clinical dashboard, and patient records.</div>
+<div class="card"><strong>Screening-as-a-Service</strong><br>Per-screen contracts with governments, NGOs, and insurers for population-level screening programmes.</div>
+<div class="card"><strong>Enterprise Licensing</strong><br>API and platform licensing to telemedicine providers and hospital networks seeking embedded retinal screening.</div>
+<div class="card"><strong>Clinical Partnerships</strong><br>Co-deployment agreements with public health programmes and ophthalmology institutions to integrate TrEye.ai into existing care pathways.</div>
+</div>
+</section>
+
+<!-- 11. TEAM -->
+<section class="slide">
+<div class="kicker">Team</div>
+<h2>Built by Researchers and Builders.</h2>
+<div class="grid">
+<div class="team-card">
+<div class="team-name">Toufiq Musah</div>
+<div class="team-role">Biomedical Data Science</div>
+<div class="team-bio">Leads product vision, AI model development, and data strategy ..</div>
+</div> <!-- Drives the intersection of clinical research and scalable medical software -->
+<div class="team-card">
+<div class="team-name">Ubaida Imoro</div>
+<div class="team-role">Operations and Clinicals – Pharmacy</div>
+<div class="team-bio">Oversees clinical operations, regulatory pathways, and healthcare deployment..</div>
+</div> <!-- Brings a pharmacy background to bridge AI outputs with real-world clinical workflows -->
+<div class="team-card">
+<div class="team-name">William Dadzie-Rhile</div>
+<div class="team-role">Technology and Software – Computer Engineering</div>
+<div class="team-bio">Leads software architecture and platform development.</div>
+</div> <!-- Computer engineering background underpins the reliability and scalability of the TrEye.ai platform. -->
+</div>
+</section>
+
+<!-- 12. ROADMAP (commented out)
+<section class="slide">
+<div class="kicker">Roadmap</div>
+<h2>From Prototype to Continental Scale.</h2>
+<div class="grid">
+<div class="card"><strong>2026 — Foundation</strong><br>MVP launch, pilot deployments, clinical partnerships, and prospective validation studies initiated.</div>
+<div class="card"><strong>2027 — Validation</strong><br>Prospective clinical validation completed. Regulatory submissions prepared. Expanded pilot programmes in Ghana and neighbouring markets.</div>
+<div class="card"><strong>2028 — Scale</strong><br>Multi-country deployment across Sub-Saharan Africa. Enterprise licensing and Screening-as-a-Service contracts activated.</div>
+<div class="card"><strong>Beyond — Platform</strong><br>TrEye.ai becomes the foundational ocular diagnostics platform for emerging markets, expanded to additional disease areas and regions.</div>
+</div>
+</section>
+-->
+
+<!-- 13. FUNDING -->
+<section class="slide">
+<div class="kicker">Funding</div>
+<h2>Building the Infrastructure for Accessible Eye Care.</h2>
+<p>Investment will be deployed across four priorities: completing the TrEye.ai software platform, prospective clinical validation, regulatory preparation for SaMD classification, and executing the initial market rollout across Sub-Saharan Africa.</p>
+<div class="grid" style="margin-top:2rem;">
+<div class="card"><strong>Product Development</strong><br>App completion, AI model refinement for field conditions, and platform infrastructure.</div>
+<div class="card"><strong>Clinical Validation</strong><br>Prospective studies and regulatory preparation to meet SaMD standards required for healthcare deployment.</div>
+<div class="card"><strong>Regulatory & Compliance</strong><br>Securing SaMD classification, engaging relevant health authorities, and building the compliance framework for multi-country deployment.</div>
+<div class="card"><strong>Market Deployment</strong><br>Pilot programme execution, CHW training, and clinical partnership development across target markets.</div>
+</div>
+</section>
+
+<!-- 13. FUTURE OUTLOOK — OCULOMICS -->
+<section class="slide">
+<div class="kicker">Future Outlook</div>
+<h2>The Eye Is a Window Into the Whole Body.</h2>
+<p>Oculomics (the use of retinal imaging to detect systemic disease): is one of the most exciting frontiers in AI-driven medicine. Peer-reviewed research has shown that a single retinal scan can reveal markers for conditions far beyond the eye itself. TrEye.ai is positioned to expand into this space as the platform matures.</p>
+<div class="grid" style="margin-top:2rem;">
+<div class="card"><strong>Cardiovascular Risk</strong><br>Predicting heart attack and stroke risk from retinal vasculature patterns. <span style="color:var(--muted);font-size:.9rem;">Nature Machine Intelligence, 2022</span></div>
+<div class="card"><strong>Neurodegeneration</strong><br>Early markers for Alzheimer's and Parkinson's disease detectable in the retina before clinical symptoms appear. <span style="color:var(--muted);font-size:.9rem;">Lancet Digital Health, 2022 · Neurology, 2023</span></div>
+<div class="card"><strong>Metabolic & Renal Disease</strong><br>Diabetes control, blood pressure, kidney disease, and hyperlipidemia signals — all accessible non-invasively from one image. <span style="color:var(--muted);font-size:.9rem;">Nature Biomedical Engineering, 2018 · Lancet Digital Health, 2020 · Eye, 2023</span></div>
+<div class="card"><strong>Hepatic & Cardiac Markers</strong><br>Liver and gallbladder disease and coronary calcium scoring detectable from retinal photographs. <span style="color:var(--muted);font-size:.9rem;">Lancet Digital Health, 2021</span></div>
+</div>
+<p style="margin-top:2.5rem;max-width:780px;">For TrEye.ai, oculomics represents a long-term expansion pathway towards transforming a retinal screening tool into a multi-disease early-warning platform, accessible to populations who currently have no equivalent diagnostic option.</p>
+</section>
+
+<!-- 13. CLOSING -->
+<section class="slide">
+<div class="kicker">Closing</div>
+<h1>See Earlier. Treat Sooner.</h1>
+<p>Nobody should lose their sight because diagnosis was out of reach.</p>
+<div class="footer">TrEye.ai · hello@treye.ai · <a href="https://treye-ai.vercel.app" target="_blank" style="color:inherit;">treye-ai.vercel.app</a></div>
+</section>
+
+</body>
+</html>
